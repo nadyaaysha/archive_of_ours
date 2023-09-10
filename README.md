@@ -1,4 +1,3 @@
-https://archiveofours.adaptable.app/
 https://archiveofours.adaptable.app/main
 
 1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).

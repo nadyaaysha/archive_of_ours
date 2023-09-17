@@ -1,24 +1,63 @@
-<h1>Archive of Ours,</h1>
-<h1>All Your Disgusting Heart Desires</h1>
 
-<h5>Writer's Name: Nadya Aysha</h5>
-<h5>Class: PBP C</h5>
+  {% extends 'base.html' %}
 
-<table border='1'>
-    <tr>
-      <th>Name</th>
-      <th>Amount</th>
-      <th>Description</th>
-      <th>Word Count</th>
-      <th>Genre</th>
-      <th>Character Source</th>
+  {% block content %}
+      <h1>Archive of Ours,</h1>
+      <h1>All Your Disgusting Heart Desires</h1>
+      
+      <h5>Writer's Name: Nadya Aysha</h5>
+      <h5>Class: PBP C</h5>
+    
 
-      <tr>
-        <td>{{ name }}</td>
-          <td>{{ amount }}</td>
-        <td>{{ description }}</td>
-        <td>{{ word_count }}</td>
-          <td>{{ genre }}</td>
-        <td>{{ chara_source }}</td>
-      </tr>
-  </table>
+      <table border='2'>
+        <tr>
+          <th>Name</th>
+          <th>Amount</th>
+          <th>Description</th>
+          <th>Word Count</th>
+          <th>Genre</th>
+          <th>Character Source</th>
+    
+          <tr>
+            <td>{{ name }}</td>
+              <td>{{ amount }}</td>
+            <td>{{ description }}</td>
+            <td>{{ word_count }}</td>
+              <td>{{ genre }}</td>
+            <td>{{ chara_source }}</td>
+          </tr>
+      </table>  
+      <table>
+          <tr>
+              <th>Name</th>
+              <th>Amount</th>
+              <th>Description</th>
+              <th>Word Count</th>
+              <th>Genre</th>
+              <th>Character Source</th>
+          </tr>
+      
+          {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
+      
+          {% for item in items %}
+              <tr>
+                  <td>{{item.name}}</td>
+                  <td>{{item.amount}}</td>
+                  <td>{{item.description}}</td>
+                  <td>{{item.word_count}}</td>
+                  <td>{{item.genre}}</td>
+                  <td>{{item.chara_source}}</td>
+                  
+              </tr>
+          {% endfor %}
+      </table>
+      
+      <br />
+      
+      <a href="{% url 'main:create_item' %}">
+          <button>
+              Request Commision
+          </button>
+      </a>
+      
+      {% endblock content %}

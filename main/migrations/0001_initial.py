@@ -18,6 +18,9 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(max_length=255)),
                 ('amount', models.IntegerField()),
                 ('description', models.TextField()),
+                ('word_count', models.IntegerField()),
+                ('genre', models.CharField(max_length=255)),
+                ('chara_source', models.TextField()),
             ],
         ),
     ]

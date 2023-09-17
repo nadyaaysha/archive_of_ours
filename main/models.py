@@ -6,5 +6,5 @@ class Item(models.Model):
     amount = models.IntegerField()          # Number in series, 1 if One-Shot
     description = models.TextField()        # General gist of it
     word_count = models.IntegerField()      # Word count
-    genre = models.TextField()              # Genre of writing
+    genre = models.CharField(max_length=255)              # Genre of writing
     chara_source = models.TextField()       # Source of characters

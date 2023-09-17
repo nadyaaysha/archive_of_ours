@@ -9,25 +9,7 @@
       <h5>Class: PBP C</h5>
     
 
-      <table border='2'>
-        <tr>
-          <th>Name</th>
-          <th>Amount</th>
-          <th>Description</th>
-          <th>Word Count</th>
-          <th>Genre</th>
-          <th>Character Source</th>
-    
-          <tr>
-            <td>{{ name }}</td>
-              <td>{{ amount }}</td>
-            <td>{{ description }}</td>
-            <td>{{ word_count }}</td>
-              <td>{{ genre }}</td>
-            <td>{{ chara_source }}</td>
-          </tr>
-      </table>  
-      <table>
+      <table border = "1">
           <tr>
               <th>Name</th>
               <th>Amount</th>
@@ -44,9 +26,9 @@
                   <td>{{item.name}}</td>
                   <td>{{item.amount}}</td>
                   <td>{{item.description}}</td>
-                  <td>{{item.word_count}}</td>
+                  <td>{{item.word_Count}}</td>
                   <td>{{item.genre}}</td>
-                  <td>{{item.chara_source}}</td>
+                  <td>{{item.character_Source}}</td>
                   
               </tr>
           {% endfor %}
@@ -60,4 +42,4 @@
           </button>
       </a>
       
-      {% endblock content %}
+{% endblock content %}

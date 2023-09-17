@@ -15,13 +15,7 @@ def show_main(request):
     items = Item.objects.all()
 
     context = {
-        'name': 'Golden Cage, Golden Tattoo.',
-        'amount': 1,
-        'description': 'Charities aren’t really her kind of thing.\nAt least, not until Rita showed up and ruined her principle.\nShe really doesn’t think she can get out of this one.',
-        'word_count': 2672,
-        'genre': 'Romance, Supernatural',
-        'chara_source': 'Original (OC)',
-        'products': items
+       'items': items
     }
 
     return render(request, "main.html", context)

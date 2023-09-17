@@ -32,9 +32,9 @@ c. Fungsi views JSON akan menerima request dengan nama show_json yang akan menyi
 d. 2 fungsi views XML dan JSON berdasarkan id akan menerima request dan id (urutan data komisi masuk) dengan nama show_xml_by_id dan show_json_by_id yang akan menyimpan hasil query dari seluruh data komisi yang ada pada Item. Fungsi ini akan mengembalikan HttpResponse yang berisi data hasil query yang sudah di-convert menjadi format XML dan tipe konten berupa application/xml, dan format JSON dan tipe konten berupa application/json. Tidak lupa saya untuk melakukan routing dengan mengimpor kedua fungsi show_xml_by_id dan show_json_by_id pada urls.py dan menambah pathnya pada urlpatterns agar dapat diakses.
 
 ***Mengakses kelima URL di poin 2 menggunakan Postman, membuat screenshot dari hasil akses URL pada Postman.
-![Screenshot (48)](https://github.com/nadyaaysha/archive_of_ours/assets/124881541/84e39417-7b53-4e88-9f54-80fff13b0648)
-![Screenshot (47)](https://github.com/nadyaaysha/archive_of_ours/assets/124881541/59a48754-94c2-46e5-8b88-3829d9ba3dcd)
-![Screenshot (49)](https://github.com/nadyaaysha/archive_of_ours/assets/124881541/57f4dc0c-66d7-4f22-8354-21cc4b8cf749)
+![Screenshot (45)](https://github.com/nadyaaysha/archive_of_ours/assets/124881541/7dd8068b-1127-45e5-b02f-0730c256cb5c)
+![Screenshot (46)](https://github.com/nadyaaysha/archive_of_ours/assets/124881541/12a7fe9f-0ac6-4b3e-bf7a-cdb9edfc8cf2)
+![Screenshot (47)](https://github.com/nadyaaysha/archive_of_ours/assets/124881541/2846fb56-367f-45c6-9378-af494eac1630)
 ![Screenshot (50)](https://github.com/nadyaaysha/archive_of_ours/assets/124881541/174e4bcd-947d-480d-b74a-88ea37da0936)
 ![Screenshot (51)](https://github.com/nadyaaysha/archive_of_ours/assets/124881541/4dd3a21d-b2ef-4df0-8085-fdd0740cd4b3)
 

@@ -5,13 +5,13 @@
       <h1>Archive of Ours,</h1>
       <h1>All Your Disgusting Heart Desires</h1>
       
-      <h5>Writer's Name: Nadya Aysha</h5>
+      <h5>Writer's Name</h5>
+      <p>{{name}}</p>
       <h5>Class: PBP C</h5>
     
-
       <table border = "1">
           <tr>
-              <th>Name</th>
+              <th>Title</th>
               <th>Amount</th>
               <th>Description</th>
               <th>Word Count</th>
@@ -23,7 +23,7 @@
       
           {% for item in items %}
               <tr>
-                  <td>{{item.name}}</td>
+                  <td>{{item.title}}</td>
                   <td>{{item.amount}}</td>
                   <td>{{item.description}}</td>
                   <td>{{item.word_Count}}</td>
@@ -42,4 +42,12 @@
           </button>
       </a>
       
+      <h5>Sesi terakhir login: {{ last_login }}</h5>
+
+      <a href="{% url 'main:logout' %}">
+          <button>
+              Logout
+          </button>
+      </a>
+
 {% endblock content %}

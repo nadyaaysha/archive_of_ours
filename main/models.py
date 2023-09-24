@@ -11,3 +11,8 @@ class Item(models.Model):
     word_Count = models.IntegerField()      # Word count
     genre = models.CharField(max_length=255)# Genre of writing
     character_Source = models.TextField()   # Source of characters
+
+# class Employee(models.Model):
+#    name = models.CharField()
+#    age = models.IntegerField()
+#    hobby = models.TextField()

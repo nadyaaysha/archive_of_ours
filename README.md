@@ -43,7 +43,8 @@ a.) Mengimplementasikan fungsi registrasi, login, dan logout untuk memungkinkan 
 -> Fungsi terakhir yang akan dibuat adalah fungsi logout setelah mengimpor logout di views.py. Fungsi logout_user menerima parameter request yang akan menghapus sesi user yang sedang masuk dan mengarahkan user ke halaman login di website saya. Pada berkas main.html, saya akan menambahkan tombol logout agar user dapat keluar dari akunnya dengan mudah. Jangan lupa saya untuk melakukan routing fungsi logout_user dengan mengimpornya di urls.py dan menambahkan pathnya di urlpatterns.
 
 b.) Membuat dua akun pengguna dengan masing-masing tiga dummy data menggunakan model yang telah dibuat pada aplikasi sebelumnya untuk setiap akun di lokal.
-: 
+
+![InShot_20230925_092545481](https://github.com/nadyaaysha/archive_of_ours/assets/124881541/ddb5f3f4-525d-4995-bf6e-5546503477fb)
 
 c.) Menghubungkan model Item dengan User.
 -> Pertama-tama, kita mengimpor User pada models.py dan menambahkan variabel user di dalam class Item yang akan menghubungkan satu Item dengan satu user melalui suatu hubungan, dimana sebuah item pasti diasosiasikan dengan satu user.
@@ -54,8 +55,10 @@ c.) Menghubungkan model Item dengan User.
 Setelah menyimpan seluruh perubahan, saya melakukan migrasi model.
 
 d.) Menampilkan detail informasi pengguna yang sedang logged in seperti username dan menerapkan cookies seperti last login pada halaman utama aplikasi.
+
 ![image](https://github.com/nadyaaysha/archive_of_ours/assets/124881541/d85c9a9d-b7ad-41ea-a137-f2d30ac4e9bf)
 ![image](https://github.com/nadyaaysha/archive_of_ours/assets/124881541/7d87e0e7-699f-437e-86f6-e209f4582957)
+
 -> Pertama, saya mengimpor hal-hal yang diperlukan seperti datetime, HttpResponseRedirect, dan reverse. Lalu, pada fungsi login_user yang telah saya buat sebelumnya, saya menambahkan cookie last_login yang akan memperlihatkan kapan terakhir kali user melakukan login. User akan login terlebih dahulu, lalu kita akan menerima respons yang berupa cookie last_login. Pada variabel context, kita juga akan menambahkan informasi cookie last_login yang akan ditampilkan di halaman web.
 
 -> Terakhir, pada fungsi logout_user, saya akan menambahkan method response yang akan menghapus cookie last_login ketika user melakukan logout dari halaman web. Tidak lupa pada berkas main.html saya menambahkan detail sesi terakhir login agar user dapat melihat kapan ia terakhir login di web.

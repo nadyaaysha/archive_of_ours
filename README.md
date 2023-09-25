@@ -6,6 +6,7 @@
 - Mudah digunakan, Django UserCreationForm sudah disediakan oleh Django Authentication Framework dan sehingga seorang pelajar pemula seperti saya tidak perlu membuat form sendiri.
 - Terjamin aman, Django UserCreationForm terjamin aman karena menggunakan validasi dan enkripsi untuk password user.
 - Fleksibel, Django UserCreationForm bisa dimodifikasi sesuai kebutuhan melalui subclass dan merubah atribut Meta class-nya.
+
 	Beberapa kekurangan dari Django UserCreationForm adalah:
 - Form ini hanya meminta username dan password saja, user tidak diminta untuk mencantumkan nama panjang ataupun e-mail. Sehingga data yang ditampung cenderung kurang lengkap.
 - Form ini tidak mendukung custom user model, sehingga untuk para developers yang mungkin membuat custom user model sendiri, maka hanya bisa mengandalkan user model yang sudah ada saja.

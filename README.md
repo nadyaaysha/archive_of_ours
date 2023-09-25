@@ -27,7 +27,7 @@ dan privasi data pada aplikasi web.
 3.] Apa itu cookies dalam konteks aplikasi web, dan bagaimana Django menggunakan cookies untuk mengelola data sesi pengguna?
 : Cookies adalah file teks yang berisi data unik tentang aktivitas user saat mengunjungi suatu website. Cookie dibuat oleh web server dan dikirim ke browser user, yang kemudian mengirimkannya kembali ke web server setiap kali user mengakses website tersebut. Cookie digunakan untuk menyimpan informasi login, preferensi user, dan lain-lain. Cookie juga dapat membantu server menyiapkan halaman web yang disesuaikan dengan pengguna. Django menggunakan cookies untuk menyimpan ID sesi di sisi client dan menyimpan data sesi di sisi server. ID sesi hanya terlihat oleh user, sedangkan data sesi tetap tersembunyi di server.
 
-4. ]Apakah penggunaan cookies aman secara default dalam pengembangan web, atau apakah ada resiko potensial yang harus diwaspadai?
+4.] Apakah penggunaan cookies aman secara default dalam pengembangan web, atau apakah ada resiko potensial yang harus diwaspadai?
 : Cookies sebetulnya tidak dianggap sebagai ancaman untuk privasi dan keamanan website, karena tidak menyimpan data pribadi (kecuali jika user menyimpan nomor kartu kredit dan alamat IP) dan tidak bisa digunakan untuk mengirim virus. Namun, ada pula risiko cookies dapat disusupi oleh pihak yang tidak bertanggung jawab, menyebabkan kebocoran informasi yang sensitif. Cookies juga dapat menurunkan performa perangkat jika terlalu banyak disimpan. Untuk mengurangi risiko tersebut, kita dapat menghapus cookie secara berkala atau membatasi izin cookie pada browser kita.
 
 5.] Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step,

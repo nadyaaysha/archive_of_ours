@@ -1,4 +1,5 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
+{% load static %}
 {% block content %}
 
 <style>
@@ -8,15 +9,15 @@
         align-items: center;
         min-height: 100vh;
         margin: 0;
-        background-color: #D7F2BC;
+        background-color: #BCD7F2;
     }
-    .create-item {
+    .edit-item {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         padding: 20px;
-        background-color: #E4F6D1;
+        background-color: #D1E4F6;
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         width: 600px;
@@ -24,8 +25,8 @@
     }
 </style>
 
-<div class="create-item">
-    <h1>Request Commision</h1>
+<div class="edit-item">
+    <h1>Edit Item</h1>
     <form method="POST">
         {% csrf_token %}
         <table>
@@ -33,7 +34,7 @@
             <tr>
                 <td></td>
                 <td>
-                    <input type="SUBMIT" value="Request Commision"/>
+                    <input type="submit" value="Edit Item"/>
                 </td>
             </tr>
         </table>

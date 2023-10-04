@@ -23,24 +23,20 @@ from django.urls import reverse
 @login_required(login_url='/login')
 def show_main(request):
     items = Item.objects.filter(user=request.user)
-
     context = {
         'name': request.user.username,
         'items': items,
         'last_login': request.COOKIES['last_login'],
     }
-
     return render(request, "main.html", context)
 
 def create_item(request):
     form = ProductForm(request.POST or None)
-
     if form.is_valid() and request.method == "POST":
         item = form.save(commit=False)
         item.user = request.user
         item.save()
         return HttpResponseRedirect(reverse('main:show_main'))
-
     context = {'form': form}
     return render(request, "create_item.html", context)
 
@@ -62,7 +58,6 @@ def show_json_by_id(request, id):
 
 def register(request):
     form = UserCreationForm()
-
     if request.method == "POST":
         form = UserCreationForm(request.POST)
         if form.is_valid():
@@ -92,3 +87,17 @@ def logout_user(request):
     response = HttpResponseRedirect(reverse('main:login'))
     response.delete_cookie('last_login')
     return response
+
+def edit_item(request, id):
+    item = Item.objects.get(pk = id)
+    form = ProductForm(request.POST or None, instance=item)
+    if form.is_valid() and request.method == "POST":
+        form.save()
+        return HttpResponseRedirect(reverse('main:show_main'))
+    context = {'form': form}
+    return render(request, "edit_item.html", context)
+
+def delete_item(request, id):
+    item = Item.objects.get(pk = id)
+    item.delete()
+    return HttpResponseRedirect(reverse('main:show_main'))

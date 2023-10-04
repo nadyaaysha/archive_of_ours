@@ -1,15 +1,40 @@
-
   {% extends 'base.html' %}
-
   {% block content %}
+
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+    }
+    .custom-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    .custom-table th {
+        text-align: center;
+        background-color: #EEEEA7;
+        padding: 10px;
+        border: 1px solid #CCC;
+    }
+    .custom-table td {
+        text-align: center;
+        padding: 10px;
+        border: 1px solid #CCC;
+    }
+    .custom-table tbody tr:last-child td {
+        background-color: #F2F2BC;
+        font-style: italic;
+    }
+</style>
+
       <h1>Archive of Ours,</h1>
       <h1>All Your Disgusting Heart Desires</h1>
-      
       <h5>Writer's Name</h5>
       <p>{{name}}</p>
       <h5>Class: PBP C</h5>
     
-      <table border = "1">
+      <table class = "custom-table">
+        <thead>
           <tr>
               <th>Title</th>
               <th>Amount</th>
@@ -18,9 +43,9 @@
               <th>Genre</th>
               <th>Character Source</th>
           </tr>
-      
+        </thead>
           {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
-      
+          <tbody>
           {% for item in items %}
               <tr>
                   <td>{{item.title}}</td>
@@ -28,22 +53,29 @@
                   <td>{{item.description}}</td>
                   <td>{{item.word_Count}}</td>
                   <td>{{item.genre}}</td>
-                  <td>{{item.character_Source}}</td>
-                  
+                  <td>{{item.character_Source}}
+                    <a href="{% url 'main:edit_item' item.pk %}">
+                        <button>
+                            Edit
+                        </button>
+                    </a>
+                    <a href="{% url 'main:delete_item' item.pk %}">
+                        <button>
+                            Delete
+                        </button>
+                    </a>
+                  </td>
               </tr>
           {% endfor %}
+        </tbody>
       </table>
-      
       <br />
-      
       <a href="{% url 'main:create_item' %}">
           <button>
               Request Commision
           </button>
       </a>
-      
       <h5>Sesi terakhir login: {{ last_login }}</h5>
-
       <a href="{% url 'main:logout' %}">
           <button>
               Logout

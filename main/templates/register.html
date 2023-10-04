@@ -1,15 +1,33 @@
 {% extends 'base.html' %}
-
 {% block meta %}
     <title>Register</title>
 {% endblock meta %}
+{% block content %}
 
-{% block content %}  
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        background-color: #F2D7BC;
+    }
+    .login {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        background-color: #F6E4D1;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        width: 900px;
+        height: 450px;
+    }</style>
 
 <div class = "login">
-    
     <h1>Register</h1>  
-
         <form method="POST" >  
             {% csrf_token %}  
             <table>  
@@ -20,7 +38,6 @@
                 </tr>  
             </table>  
         </form>
-
     {% if messages %}  
         <ul>   
             {% for message in messages %}  
@@ -28,7 +45,5 @@
                 {% endfor %}  
         </ul>   
     {% endif %}
-
 </div>  
-
 {% endblock content %}

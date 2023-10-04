@@ -11,36 +11,38 @@ c) ID Selector, adalah selector yang memilih element berdasarkan ID, contoh: # h
 d) Attribute Selector, adalah selector yang memilih element berdasarkan attribute yang dimilikinya, contoh: {border: 2px black;} akan memberikan border sebesar 2 piksel dengan warna hitam pada semua element.
 
 2. Jelaskan HTML5 Tag yang kamu ketahui.
-	<main>: Menampilkan konten utama dari halaman web.
+<main>: Menampilkan konten utama dari halaman web.
 
-	<nav>: Menampilkan navigasi atau menu halaman web.
+<nav>: Menampilkan navigasi atau menu halaman web.
 
-	<section>: Menampilkan bagian dari halaman web.
+<section>: Menampilkan bagian dari halaman web.
 
-	<article>: Menampilkan konten independen yang dapat berdiri sendiri.
+<article>: Menampilkan konten independen yang dapat berdiri sendiri.
 
-	<aside>: Menampilkan konten yang terkait dengan konten lain di sekitarnya.
+<aside>: Menampilkan konten yang terkait dengan konten lain di sekitarnya.
 
-	<audio>: Menampilkan audio atau suara.
+<audio>: Menampilkan audio atau suara.
 
-	<embed>: Menampilkan media yang disematkan, seperti video atau animasi.
+<embed>: Menampilkan media yang disematkan, seperti video atau animasi.
 
-	<footer>: Menampilkan footer atau bagian bawah halaman web.
+<footer>: Menampilkan footer atau bagian bawah halaman web.
 
-	<header>: Menampilkan header atau bagian atas halaman web.
+<header>: Menampilkan header atau bagian atas halaman web.
 
-	<canvas>: Menampilkan gambar atau grafik yang dapat diubah secara dinamis.
+<canvas>: Menampilkan gambar atau grafik yang dapat diubah secara dinamis.
 
-	<datalist>: Menampilkan daftar opsi untuk elemen input.
+<datalist>: Menampilkan daftar opsi untuk elemen input.
 
-	<details>: Menampilkan informasi tambahan yang dapat ditampilkan atau disembunyikan.
+<details>: Menampilkan informasi tambahan yang dapat ditampilkan atau disembunyikan.
 
 3. Jelaskan perbedaan antara margin dan padding.
 
 : Margin adalah jarak antara element HTML dan tepi kotak yang mengelilinginya. Margin menciptakan ruang kosong di luar element, dan tidak mempengaruhi ukuran elemen itu sendiri. Margin dapat diatur menggunakan properti CSS seperti margin-top, margin-bottom, margin-left, dan margin-right. Margin digunakan untuk mengontrol tata letak elemen pada halaman, seperti mengatur jarak antar elemen yang berdekatan. Padding adalah jarak antara content element HTML dan tepi kotak yang mengelilinginya. Padding menciptakan ruang kosong di dalam element, dan dapat memperbesar ukuran elemen itu sendiri. Padding dapat diatur menggunakan properti CSS seperti padding-top, padding-bottom, padding-left, dan padding-right. Padding digunakan untuk menambah ruang internal suatu elemen.
 
 4. Jelaskan perbedaan antara framework CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?
+
 ![image](https://github.com/nadyaaysha/archive_of_ours/assets/124881541/2f0a76ca-bf65-414a-98b8-573a20921098)
+
 : Pilihan antara TailWind dan BootStrap sebetulnya balik lagi ke kebutuhan developer. Jika developer ingin membuat situs web yang responsif dan cepat, maka BootStrap adalah pilihan terbaik karena komponen responsif berbasis mobile yang telah didesain sebelumnya untuk merancang halaman website yang fast-response. Namun, jika developer memiliki ide kreativitas yang tinggi dan ingin memegang kontrol penuh atas gaya dan tata letak dalam web-nya, maka TailWind menjadi pilihan terbaik karena fleksibilitas desainnya yang lebih luas.
 
 5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).

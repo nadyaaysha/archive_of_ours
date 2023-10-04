@@ -11,29 +11,8 @@ c) ID Selector, adalah selector yang memilih element berdasarkan ID, contoh: # h
 d) Attribute Selector, adalah selector yang memilih element berdasarkan attribute yang dimilikinya, contoh: {border: 2px black;} akan memberikan border sebesar 2 piksel dengan warna hitam pada semua element.
 
 2. Jelaskan HTML5 Tag yang kamu ketahui.
-- <main>: Menampilkan konten utama dari halaman web.
 
-- <nav>: Menampilkan navigasi atau menu halaman web.
-
-- <section>: Menampilkan bagian dari halaman web.
-
-- <article>: Menampilkan konten independen yang dapat berdiri sendiri.
-
-- <aside>: Menampilkan konten yang terkait dengan konten lain di sekitarnya.
-
-- <audio>: Menampilkan audio atau suara.
-
-- <embed>: Menampilkan media yang disematkan, seperti video atau animasi.
-
-- <footer>: Menampilkan footer atau bagian bawah halaman web.
-
-- <header>: Menampilkan header atau bagian atas halaman web.
-
-- <canvas>: Menampilkan gambar atau grafik yang dapat diubah secara dinamis.
-
-- <datalist>: Menampilkan daftar opsi untuk elemen input.
-
-- <details>: Menampilkan informasi tambahan yang dapat ditampilkan atau disembunyikan.
+![image](https://github.com/nadyaaysha/archive_of_ours/assets/124881541/592fca4a-faa1-4d9c-9f80-55fe35d2815f)
 
 3. Jelaskan perbedaan antara margin dan padding.
 

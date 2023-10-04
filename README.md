@@ -1,3 +1,72 @@
+<3 TUGAS 5 <3
+
+1. Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya.
+
+a) Tag Selector, adalah selector yang memilih element berdasarkan nama tag, contoh: p {color: red;} akan memilih semua element <p> dan mengubah warna teksnya menjadi merah.
+
+b) Class Selector, adalah selector yang memilih element berdasarkan nama class yang diberikan, contoh: .red {color: white; background: red; padding: 5px;} akan memilih semua elemen yang memiliki class red dan mengubah warnanya menjadi putih, latar belakangnya menjadi merah, dan menambahkan padding sebesar 5 piksel.
+
+c) ID Selector, adalah selector yang memilih element berdasarkan ID, contoh: # header {background: pink; color: white; height: 200px: padding: 25px;} akan memilih element dengan ID header dan mengubah warna latar belakangnya menjadi pink, warna teks menjadi putih, tinggi dan padding masing-masing sebesar 200 dan 25 piksel.
+
+d) Attribute Selector, adalah selector yang memilih element berdasarkan attribute yang dimilikinya, contoh: {border: 2px black;} akan memberikan border sebesar 2 piksel dengan warna hitam pada semua element.
+
+2. Jelaskan HTML5 Tag yang kamu ketahui.
+	<main>: Menampilkan konten utama dari halaman web.
+
+	<nav>: Menampilkan navigasi atau menu halaman web.
+
+	<section>: Menampilkan bagian dari halaman web.
+
+	<article>: Menampilkan konten independen yang dapat berdiri sendiri.
+
+	<aside>: Menampilkan konten yang terkait dengan konten lain di sekitarnya.
+
+	<audio>: Menampilkan audio atau suara.
+
+	<embed>: Menampilkan media yang disematkan, seperti video atau animasi.
+
+	<footer>: Menampilkan footer atau bagian bawah halaman web.
+
+	<header>: Menampilkan header atau bagian atas halaman web.
+
+	<canvas>: Menampilkan gambar atau grafik yang dapat diubah secara dinamis.
+
+	<datalist>: Menampilkan daftar opsi untuk elemen input.
+
+	<details>: Menampilkan informasi tambahan yang dapat ditampilkan atau disembunyikan.
+
+3. Jelaskan perbedaan antara margin dan padding.
+
+: Margin adalah jarak antara element HTML dan tepi kotak yang mengelilinginya. Margin menciptakan ruang kosong di luar element, dan tidak mempengaruhi ukuran elemen itu sendiri. Margin dapat diatur menggunakan properti CSS seperti margin-top, margin-bottom, margin-left, dan margin-right. Margin digunakan untuk mengontrol tata letak elemen pada halaman, seperti mengatur jarak antar elemen yang berdekatan. Padding adalah jarak antara content element HTML dan tepi kotak yang mengelilinginya. Padding menciptakan ruang kosong di dalam element, dan dapat memperbesar ukuran elemen itu sendiri. Padding dapat diatur menggunakan properti CSS seperti padding-top, padding-bottom, padding-left, dan padding-right. Padding digunakan untuk menambah ruang internal suatu elemen.
+
+4. Jelaskan perbedaan antara framework CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?
+![image](https://github.com/nadyaaysha/archive_of_ours/assets/124881541/2f0a76ca-bf65-414a-98b8-573a20921098)
+: Pilihan antara TailWind dan BootStrap sebetulnya balik lagi ke kebutuhan developer. Jika developer ingin membuat situs web yang responsif dan cepat, maka BootStrap adalah pilihan terbaik karena komponen responsif berbasis mobile yang telah didesain sebelumnya untuk merancang halaman website yang fast-response. Namun, jika developer memiliki ide kreativitas yang tinggi dan ingin memegang kontrol penuh atas gaya dan tata letak dalam web-nya, maka TailWind menjadi pilihan terbaik karena fleksibilitas desainnya yang lebih luas.
+
+5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+
+>>> Kustomisasi desain pada template HTML yang telah dibuat pada Tugas 4 dengan menggunakan CSS atau CSS framework (seperti Bootstrap, Tailwind, Bulma) dengan ketentuan sebagai berikut
+
+# Kustomisasi halaman login, register, dan tambah inventori semenarik mungkin.
+
+a. Dalam block <style> saya menambahkan attribute body dan .login yang akan saya gunakan untuk kostumisasi halaman login saya. Di dalam kurung kurawal body, display akan saya set menjadi flex, pengaturan content dan aligning akan berada di tengah, tinggi dari keseluruhan content adalah 100vh, margin akan saya set juga menjadi 0 agar seluruh content berada di tengah, serta warna background menjadi ungu untuk login page dan merah muda untuk register page.
+
+b. Di dalam kurung kurawal .login disinilah saya akan menampung isi content utama dari login ke dalam suatu box. Display akan saya set menjadi flex, arah flex akan saya atur berdasarkan kolom, pengaturan content dan aligning akan berada di tengah, padding sebesar 20 piksel, warna box menjadi ungu muda untuk login page dan merah yang lebih muda untuk register page, radius border sebesar 10 piksel, bayangan box menjadi hitam dan besarnya 10 piksel, serta tinggi dan lebar box masing-masing sebesar 350 dan 450 piksel.
+
+# Kustomisasi halaman daftar inventori menjadi lebih berwarna maupun menggunakan approach lain seperti menggunakan Card.
+
+a. Dalam block <style>, saya atur body, html nya sedemikian rupa sehingga memiliki margin dan padding masing-masing 0.
+
+b.Lalu, dalam kurung kurawal .custom-table, saya atur lebar tabelnya memenuhi layar, yakni 100 persen, serta border-collapsenya menjadi collapse.
+
+c. Dalam .custom-table, saya akan atur headernya sehingga textnya berada di tengah, background colornya kuning, padding 10 piksel, serta border 1 piksel.
+
+d. Untuk isi inventory atau komisi essay maupun fiksi dari user, isi content akan saya align di center dan padding sebesar 10 piksel, serta border sebesar 1 piksel.
+
+# [BONUS] Memberikan warna yang berbeda (teks atau background) pada baris terakhir dari item pada inventory anda menggunakan CSS.
+
+: Untuk menunjukkan recent commision user, saya akan kostumisasi item terakhir yang user komisi agar memiliki warna background yang berbeda, yakni warna kuning muda, teksnya juga saya italics agar berbeda dengan komisi user yang lain.
+=========================================================================================================================================================================================
 —Tugas 4—
 
 1.] Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya?

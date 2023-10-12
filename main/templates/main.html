@@ -33,8 +33,51 @@
       <p>{{name}}</p>
       <h5>Class: PBP C</h5>
     
-      <table class = "custom-table">
-        <thead>
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Item</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                      <form id="form" onsubmit="return false;">
+                          {% csrf_token %}
+                          <div class="mb-3">
+                              <label for="title" class="col-form-label">Title:</label>
+                              <input type="text" class="form-control" id="title" name="title"></input>
+                          </div>
+                          <div class="mb-3">
+                              <label for="amount" class="col-form-label">Amount:</label>
+                              <input type="number" class="form-control" id="amount" name="amount"></input>
+                          </div>
+                          <div class="mb-3">
+                              <label for="description" class="col-form-label">Description:</label>
+                              <textarea class="form-control" id="description" name="description"></textarea>
+                          </div>
+                          <div class="mb-3">
+                            <label for="word_Count" class="col-form-label">Word Count:</label>
+                            <input type="number" class="form-control" id="word_Count" name="word_Count"></input>
+                        </div>
+                        <div class="mb-3">
+                            <label for="genre" class="col-form-label">Genre:</label>
+                            <input type="text" class="form-control" id="genre" name="genre"></input>
+                        </div>
+                        <div class="mb-3">
+                            <label for="character_Source" class="col-form-label">Character Source:</label>
+                            <textarea class="form-control" id="character_Source" name="character_Source"></textarea>
+                        </div>
+                      </form>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary" id="button_add" data-bs-dismiss="modal">Add Item</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <table id = "item_table">
           <tr>
               <th>Title</th>
               <th>Amount</th>
@@ -43,9 +86,7 @@
               <th>Genre</th>
               <th>Character Source</th>
           </tr>
-        </thead>
           {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
-          <tbody>
           {% for item in items %}
               <tr>
                   <td>{{item.title}}</td>
@@ -53,21 +94,9 @@
                   <td>{{item.description}}</td>
                   <td>{{item.word_Count}}</td>
                   <td>{{item.genre}}</td>
-                  <td>{{item.character_Source}}
-                    <a href="{% url 'main:edit_item' item.pk %}">
-                        <button>
-                            Edit
-                        </button>
-                    </a>
-                    <a href="{% url 'main:delete_item' item.pk %}">
-                        <button>
-                            Delete
-                        </button>
-                    </a>
-                  </td>
+                  <td>{{item.character_Source}}</td>
               </tr>
           {% endfor %}
-        </tbody>
       </table>
       <br />
       <a href="{% url 'main:create_item' %}">
@@ -75,11 +104,68 @@
               Request Commision
           </button>
       </a>
-      <h5>Sesi terakhir login: {{ last_login }}</h5>
       <a href="{% url 'main:logout' %}">
-          <button>
-              Logout
-          </button>
-      </a>
+        <button>
+            Logout
+        </button>
+    </a>
+
+      <h5>Sesi terakhir login: {{ last_login }}</h5>
+
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Request Commision</button>
+
+<script>
+    async function getItems() {
+        return fetch("{% url 'main:get_item_json' %}").then((res) => res.json())
+    }
+    async function refreshItems() {
+        document.getElementById("item_table").innerHTML = ""
+        const items = await getItems()
+        let htmlString = `<thead class="custom-table">
+            <tr>
+                <th scope="col" class="text-center align-middle">Title</th>
+                <th scope="col" class="text-center align-middle">Amount</th>
+                <th scope="col" class="text-center align-middle">Description</th>
+                <th scope="col" class="text-center align-middle">Word Count</th>
+                <th scope="col" class="text-center align-middle">Genre</th>
+                <th scope="col" class="text-center align-middle">Character Source</th>
+            </tr>
+        </thead>
+        <tbody>`;
+        items.forEach((item) => {
+            htmlString += `
+            <tr>
+                <td>${item.fields.title}</td>
+                <td>${item.fields.amount}</td>
+                <td>${item.fields.description}</td>
+                <td>${item.fields.word_Count}</td>
+                <td>${item.fields.genre}</td>
+                <td>${item.fields.character_Source}</td>
+                <td class="text-center align-middle">
+                <a href="edit-item/${item.pk}">
+                    <button>Edit</button>
+                </a>
+                <a href="delete/${item.pk}">
+                    <button>Delete</button>
+                    </a>
+            </td>
+            </tr>`;
+        });
+        
+        htmlString += `</tbody>`
+        document.getElementById("item_table").innerHTML = htmlString;
+    }
+    refreshItems()
+    function addItem() {
+        fetch("{% url 'main:add_item_ajax' %}", {
+            method: "POST",
+            body: new FormData(document.querySelector('#form'))
+        }).then(refreshItems)
+
+        document.getElementById("form").reset()
+        return false
+    }
+    document.getElementById("button_add").onclick = addItem
+</script>
 
 {% endblock content %}

@@ -1,3 +1,48 @@
+# Tugas 6
+
+## 1. Jelaskan perbedaan antara asynchronous programming dengan synchronous programming.
+
+![image](https://github.com/nadyaaysha/archive_of_ours/assets/124881541/21aa2b7f-015b-44ed-bd8f-2ef211a767cb)
+
+## 2. Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma event-driven programming. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.
+: Paradigma event-driven programming adalah teknik pemrograman yang memungkinkan program menanggapi suatu event yang terjadi pada program. Dalam AJAX, event-driven programming digunakan untuk membuat program yang responsif dan interaktif. Dalam event-driven programming, program menunggu event terjadi sebelum melanjutkan eksekusi kode. Event dapat berupa input dari user, seperti button ‘Request Commission’ pada website saya yang akan menampilkan modal berupa pop-up yang akan meminta input/ request dari user dan ketika user click button ‘Add Request’ maka request komisi akan ditampilkan.
+
+## 3. Jelaskan penerapan asynchronous programming pada AJAX.
+: AJAX memungkinkan aplikasi web untuk mengirim dan menerima data dari server tanpa harus memuat ulang halaman web secara keseluruhan. AJAX menerapkan programming secara asinkron untuk mengirim request ke server dan menerima response dari server tanpa harus menunggu response sebelumnya selesai.Permintaan ke server dapat dikirimkan secara bersamaan tanpa harus menunggu response sebelumnya selesai. Dalam penerapan AJAX, asynchronous programming memungkinkan website tetap responsif dan interaktif karena tidak perlu menunggu response dari server sebelum melanjutkan eksekusi kode.
+
+## 4. Pada PBP kali ini, penerapan AJAX dilakukan dengan menggunakan Fetch API daripada library jQuery. Bandingkanlah kedua teknologi tersebut dan tuliskan pendapatmu teknologi manakah yang lebih baik untuk digunakan.
+
+![image](https://github.com/nadyaaysha/archive_of_ours/assets/124881541/be020e20-7983-4c91-86d9-374e7affce45)
+
+Menurut pendapat saya, Fetch API lebih sederhana dan mudah dibaca, serta lebih cepat dalam melakukan request.
+
+## 5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+### -> Mengubah tugas 5 yang telah dibuat sebelumnya menjadi menggunakan AJAX.
+### ***AJAX GET***
+* Ubahlah kode tabel data item agar dapat mendukung AJAX GET.
+	* Pada start tag table saya, saya menambahkan id = “item_table” agar tabel data item mendukung AJAX GET.
+* Lakukan pengambilan task menggunakan AJAX GET.
+	* Saya akan membuat block '<script>' yang akan menampilkan tabel data item agar mendukung AJAX GET. Saya akan membuat fungsi asinkron getItems() yang akan me-return/ fetch get_item_json yang dimana akan mengembalikan data-data berupa JSON.
+### ***AJAX POST***
+* Buatlah sebuah tombol yang membuka sebuah modal dengan form untuk menambahkan item.
+	* Saya menambahkan sebuah button yang akan membuka modal berupa form yang berfungsi menerima request komisi dari user. Button ini saya tambahkan di bawah detail sesi terakhir login. Button type berupa button, classnya berupa btn-primary, data-bs-togglenya berupa modal, dan data-bs-target adalah #exampleModal. Button ini akan bertuliskan ‘Request Commission’.
+	* Untuk modalnya sendiri, saya akan membuat form yang memiliki fields yang sama dengan halaman page request commission di website saya. Di dalam block <'div'> pertama, class berupa “modal fade” dan id = “exampleModal”. Dalam beberapa block <'div'> selanjutnya, class akan berupa modal-dialog, modal-content, dan modal-header. Pada block <'div class= “modal-body”'> akan memuat id form dan onsubmit yang me-return false ketika di submit. Setelah diisi dengan fields yang diperlukan seperti Title, Amount, Description, Word Count, Genre, dan Character Source, saya akan menambahkan tombol ‘Request Commission’ yang akan memproses data input user dan tombol Close jikalau user tidak jadi me-request komisi.
+* Buatlah fungsi view baru untuk menambahkan item baru ke dalam basis data.
+	* Dalam views.py, saya membuat fungsi baru yakni get_item_json yang memiliki parameter request. variable item akan mengambil seluruh data berdasarkan user dan mengembalikan HttpResponse berupa JSON.
+	* Lalu, saya juga membuat fungsi add_item_ajax yang berparameter request, dekorator @csrf_exempt, dan menyimpan seluruh field yang telah diisi user ke dalam serangkaian variabel dan menyimpan item komisi serta me-return HttpResponse dari data yang user telah input.
+* Buatlah path /create-ajax/ yang mengarah ke fungsi view yang baru kamu buat.
+	* Dalam urls.py saya akan mengimpor kedua fungsi views yang telah buat sebelumnya dan menambahkan kedua path tersebut ke urlpatterns.
+* Hubungkan form yang telah kamu buat di dalam modal kamu ke path /create-ajax/.
+	* Dalam block '<script>', saya akan membuat fungsi addItem() yang akan menghubungkan fungsi add_item_ajax tadi berupa form lalu jika berhasil menyimpan data nanti akan melakukan refresh secara asinkron agar data langsung tampil tanpa user harus me-refresh halaman page.
+	* Saya juga menambahkan button ‘Request Commission’ pada modal untuk menjalankan fungsi addItem().
+* Lakukan refresh pada halaman utama secara asinkronus untuk menampilkan daftar item terbaru tanpa reload halaman utama secara keseluruhan.
+	* Saya membuat fungsi asinkron refreshItems() berisi const items yang akan memanggil fungsi getItems(). Lalu, htmlString akan memuat ulang tabel dengan data baru tanpa perlu me-refresh halaman web. Fields berupa enam fields yang saya implementasi di web saya.
+### ***Melakukan perintah collectstatic.***
+* Perintah ini bertujuan untuk mengumpulkan file static dari setiap aplikasi kamu ke dalam suatu folder yang dapat dengan mudah disajikan pada produksi.
+	* Setelah saya mengaktifkan env, saya menjalankan perintah python manage.py collectstatic yang akan membuat folder static pada root folder dan berisi semua file static seperti gambar, stylesheet, dan JavaScript ke direktori yang ditentukan di pengaturan proyek Django saya.
+
+#
+
 <3 TUGAS 5 <3
 
 1. Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya.

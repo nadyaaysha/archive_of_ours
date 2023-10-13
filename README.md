@@ -1,5 +1,9 @@
 # Tugas 6
 
+### Link:
+
+[http://nadya-aysha-tugas.pbp.cs.ui.ac.id/](http://nadya-aysha-tugas.pbp.cs.ui.ac.id/)
+
 ## 1. Jelaskan perbedaan antara asynchronous programming dengan synchronous programming.
 
 ![image](https://github.com/nadyaaysha/archive_of_ours/assets/124881541/21aa2b7f-015b-44ed-bd8f-2ef211a767cb)
